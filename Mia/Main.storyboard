@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,10 +54,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koJ-c9-evG">
+                                <rect key="frame" x="373.5" y="58" width="20.5" height="22"/>
+                                <menu key="menu" id="yOE-8O-GrA">
+                                    <children>
+                                        <command title="Item 1" id="VB8-EB-cjG"/>
+                                        <command title="Item 2" id="3CX-Pd-xZA"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" image="gearshape.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="koJ-c9-evG" secondAttribute="trailing" constant="20" id="8pg-kX-wIs"/>
                             <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="SjZ-Lg-4ya"/>
                             <constraint firstItem="J8g-LN-diw" firstAttribute="top" secondItem="Vd0-ma-Uof" secondAttribute="bottom" constant="5" id="ZRh-fM-vz0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vd0-ma-Uof" secondAttribute="trailing" constant="5" id="c2H-UZ-owG"/>
@@ -64,6 +76,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J8g-LN-diw" secondAttribute="trailing" constant="5" id="e8z-53-U2M"/>
                             <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="Ptg-ax-fuz" secondAttribute="top" constant="5" id="mAS-hK-ZiD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J8g-LN-diw" secondAttribute="bottom" constant="5" id="o34-wg-rOA"/>
+                            <constraint firstItem="koJ-c9-evG" firstAttribute="top" secondItem="Vd0-ma-Uof" secondAttribute="top" constant="5" id="o9S-Ab-fmW"/>
                             <constraint firstItem="Vd0-ma-Uof" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="qO8-BH-fg8"/>
                             <constraint firstItem="J8g-LN-diw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="toq-xg-g7u"/>
                         </constraints>
@@ -81,6 +94,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
