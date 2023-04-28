@@ -6,7 +6,7 @@
 //
 
 import Foundation 
-import CLLaMa
+import CGPTNeoX
 
 public class LLaMa: Model {
 

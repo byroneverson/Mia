@@ -18,9 +18,9 @@
 		E624E2152958FF3C00996CD1 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2142958FF3C00996CD1 /* AI.swift */; };
 		E624E271295904F600996CD1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E270295904F600996CD1 /* StringExt.swift */; };
 		E6515E2929FC724D00ABFC17 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6515E2829FC724D00ABFC17 /* Model.swift */; };
-		E6515E2B29FC785D00ABFC17 /* CLLaMa in Frameworks */ = {isa = PBXBuildFile; productRef = E6515E2A29FC785D00ABFC17 /* CLLaMa */; };
 		E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04AA29EA864600A95CA2 /* Utils.swift */; };
 		E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668788329B13FE3002BD5E7 /* Tasker.swift */; };
+		E66EAFD329FC7D4100DBD2E9 /* CGPTNeoX in Frameworks */ = {isa = PBXBuildFile; productRef = E66EAFD229FC7D4100DBD2E9 /* CGPTNeoX */; };
 		E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B0F152959B36300265845 /* UITextViewExt.swift */; };
 		E68C755729A09C79000A3BA5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C755629A09C79000A3BA5 /* Math.swift */; };
 		E68C756129A60DF3000A3BA5 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C756029A60DF3000A3BA5 /* ArrayExt.swift */; };
@@ -33,11 +33,10 @@
 		E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeGraph.swift; sourceTree = "<group>"; };
 		E6024E7229E8E786001FE9B0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6024EC329EA7BEB001FE9B0 /* llama.swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = llama.swift; sourceTree = "<group>"; };
 		E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/pythia/ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; sourceTree = "<group>"; };
 		E61A9D2229FB577C004F50EB /* ggml-stablelm-base-alpha-3b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-base-alpha-3b-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-base-alpha-3b-q4_0.bin"; sourceTree = "<group>"; };
 		E61A9D2929FBCE1D004F50EB /* ggml-stablelm-tuned-alpha-7b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-tuned-alpha-7b-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-tuned-alpha-7b-q4_0.bin"; sourceTree = SOURCE_ROOT; };
-		E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-llama-7b-se-rl-peft-q4_0.bin"; path = "llama.swift/vendor/llama.cpp/models/trl-lib/ggml-llama-7b-se-rl-peft-q4_0.bin"; sourceTree = SOURCE_ROOT; };
+		E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-llama-7b-se-rl-peft-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/trl-lib/ggml-llama-7b-se-rl-peft-q4_0.bin"; sourceTree = SOURCE_ROOT; };
 		E61E38F329B1F0BA00114C15 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E61E38F529B1F12E00114C15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E624E1FE2958ECC800996CD1 /* Mia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6515E2B29FC785D00ABFC17 /* CLLaMa in Frameworks */,
+				E66EAFD329FC7D4100DBD2E9 /* CGPTNeoX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +91,6 @@
 		E6024EC229EA7BEB001FE9B0 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				E6024EC329EA7BEB001FE9B0 /* llama.swift */,
 				E6D7093029FA682200F93D64 /* gptneox.swift */,
 			);
 			name = Packages;
@@ -193,7 +191,7 @@
 			);
 			name = Mia;
 			packageProductDependencies = (
-				E6515E2A29FC785D00ABFC17 /* CLLaMa */,
+				E66EAFD229FC7D4100DBD2E9 /* CGPTNeoX */,
 			);
 			productName = Mia;
 			productReference = E624E1FE2958ECC800996CD1 /* Mia.app */;
@@ -504,9 +502,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E6515E2A29FC785D00ABFC17 /* CLLaMa */ = {
+		E66EAFD229FC7D4100DBD2E9 /* CGPTNeoX */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CLLaMa;
+			productName = CGPTNeoX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
