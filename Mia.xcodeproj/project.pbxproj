@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */; };
+		E6024E7329E8E786001FE9B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6024E7229E8E786001FE9B0 /* Main.storyboard */; };
+		E6024E7729E8F6D6001FE9B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */; };
+		E61A9D2D29FC64BA004F50EB /* CLlama in Frameworks */ = {isa = PBXBuildFile; productRef = E61A9D2C29FC64BA004F50EB /* CLlama */; };
+		E61A9D2F29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin in Resources */ = {isa = PBXBuildFile; fileRef = E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */; };
+		E61A9D3029FC6633004F50EB /* Llama.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04A529EA83C500A95CA2 /* Llama.swift */; };
+		E624E2022958ECC800996CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2012958ECC800996CD1 /* AppDelegate.swift */; };
+		E624E2042958ECC800996CD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2032958ECC800996CD1 /* ChatViewController.swift */; };
+		E624E2062958ECC900996CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E624E2052958ECC900996CD1 /* Assets.xcassets */; };
+		E624E2152958FF3C00996CD1 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2142958FF3C00996CD1 /* AI.swift */; };
+		E624E271295904F600996CD1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E270295904F600996CD1 /* StringExt.swift */; };
+		E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04AA29EA864600A95CA2 /* Utils.swift */; };
+		E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668788329B13FE3002BD5E7 /* Tasker.swift */; };
+		E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B0F152959B36300265845 /* UITextViewExt.swift */; };
+		E68C755729A09C79000A3BA5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C755629A09C79000A3BA5 /* Math.swift */; };
+		E68C756129A60DF3000A3BA5 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C756029A60DF3000A3BA5 /* ArrayExt.swift */; };
+		E6EBE40B29598808006290A0 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40A29598808006290A0 /* AnimatedTextField.swift */; };
+		E6EBE40D29598AE9006290A0 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40C29598AE9006290A0 /* AnimatedButton.swift */; };
+		E6EBE40F295998A2006290A0 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40E295998A2006290A0 /* AnimatedTextView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeGraph.swift; sourceTree = "<group>"; };
+		E6024E7229E8E786001FE9B0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E6024EC329EA7BEB001FE9B0 /* llama.swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = llama.swift; sourceTree = "<group>"; };
+		E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/pythia/ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; sourceTree = "<group>"; };
+		E61A9D2229FB577C004F50EB /* ggml-stablelm-base-alpha-3b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-base-alpha-3b-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-base-alpha-3b-q4_0.bin"; sourceTree = "<group>"; };
+		E61A9D2929FBCE1D004F50EB /* ggml-stablelm-tuned-alpha-7b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-tuned-alpha-7b-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-tuned-alpha-7b-q4_0.bin"; sourceTree = SOURCE_ROOT; };
+		E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-llama-7b-se-rl-peft-q4_0.bin"; path = "llama.swift/vendor/llama.cpp/models/trl-lib/ggml-llama-7b-se-rl-peft-q4_0.bin"; sourceTree = SOURCE_ROOT; };
+		E61E38F329B1F0BA00114C15 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E61E38F529B1F12E00114C15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E624E1FE2958ECC800996CD1 /* Mia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E624E2012958ECC800996CD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E624E2032958ECC800996CD1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E624E2052958ECC900996CD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E624E20A2958ECC900996CD1 /* Mia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mia.entitlements; sourceTree = "<group>"; };
+		E624E2102958F21E00996CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E624E2142958FF3C00996CD1 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
+		E624E270295904F600996CD1 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		E6533BB329592D2F000A80BA /* TokenizerGPT2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerGPT2.swift; sourceTree = "<group>"; };
+		E6533BB529592DA6000A80BA /* ModelGPT2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGPT2.swift; sourceTree = "<group>"; };
+		E65A04A529EA83C500A95CA2 /* Llama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llama.swift; sourceTree = "<group>"; };
+		E65A04AA29EA864600A95CA2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E668788329B13FE3002BD5E7 /* Tasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasker.swift; sourceTree = "<group>"; };
+		E68B0F152959B36300265845 /* UITextViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExt.swift; sourceTree = "<group>"; };
+		E68C754E29A076C7000A3BA5 /* PyTorchLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyTorchLoader.swift; sourceTree = "<group>"; };
+		E68C755029A07742000A3BA5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E68C755629A09C79000A3BA5 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		E68C756029A60DF3000A3BA5 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
+		E6D7093029FA682200F93D64 /* gptneox.swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = gptneox.swift; sourceTree = "<group>"; };
+		E6D7093129FA6DB000F93D64 /* ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin"; sourceTree = "<group>"; };
+		E6E0185029EFCA4200656843 /* GPTNeoX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTNeoX.swift; sourceTree = "<group>"; };
+		E6EBE40A29598808006290A0 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
+		E6EBE40C29598AE9006290A0 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		E6EBE40E295998A2006290A0 /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E624E1FB2958ECC800996CD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E61A9D2D29FC64BA004F50EB /* CLlama in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6024E7129E8E53F001FE9B0 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */,
+				E68C755629A09C79000A3BA5 /* Math.swift */,
+				E65A04AA29EA864600A95CA2 /* Utils.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		E6024EC229EA7BEB001FE9B0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E6024EC329EA7BEB001FE9B0 /* llama.swift */,
+				E6D7093029FA682200F93D64 /* gptneox.swift */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		E624E1F52958ECC800996CD1 = {
+			isa = PBXGroup;
+			children = (
+				E6024EC229EA7BEB001FE9B0 /* Packages */,
+				E624E2102958F21E00996CD1 /* Info.plist */,
+				E624E2002958ECC800996CD1 /* Mia */,
+				E624E1FF2958ECC800996CD1 /* Products */,
+				E624E259295902A100996CD1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E624E1FF2958ECC800996CD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E624E1FE2958ECC800996CD1 /* Mia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E624E2002958ECC800996CD1 /* Mia */ = {
+			isa = PBXGroup;
+			children = (
+				E65A04A929EA842800A95CA2 /* Old */,
+				E6533BB729592F18000A80BA /* models */,
+				E6024E7129E8E53F001FE9B0 /* Math */,
+				E624E2012958ECC800996CD1 /* AppDelegate.swift */,
+				E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */,
+				E624E2032958ECC800996CD1 /* ChatViewController.swift */,
+				E65A04A529EA83C500A95CA2 /* Llama.swift */,
+				E6E0185029EFCA4200656843 /* GPTNeoX.swift */,
+				E624E2142958FF3C00996CD1 /* AI.swift */,
+				E668788329B13FE3002BD5E7 /* Tasker.swift */,
+				E6EBE40A29598808006290A0 /* AnimatedTextField.swift */,
+				E6EBE40E295998A2006290A0 /* AnimatedTextView.swift */,
+				E6EBE40C29598AE9006290A0 /* AnimatedButton.swift */,
+				E68C756029A60DF3000A3BA5 /* ArrayExt.swift */,
+				E68B0F152959B36300265845 /* UITextViewExt.swift */,
+				E624E270295904F600996CD1 /* StringExt.swift */,
+				E624E2052958ECC900996CD1 /* Assets.xcassets */,
+				E6024E7229E8E786001FE9B0 /* Main.storyboard */,
+				E624E20A2958ECC900996CD1 /* Mia.entitlements */,
+			);
+			path = Mia;
+			sourceTree = "<group>";
+		};
+		E624E259295902A100996CD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E61E38F529B1F12E00114C15 /* Cocoa.framework */,
+				E61E38F329B1F0BA00114C15 /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6533BB729592F18000A80BA /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */,
+				E6D7093129FA6DB000F93D64 /* ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin */,
+				E61A9D2229FB577C004F50EB /* ggml-stablelm-base-alpha-3b-q4_0.bin */,
+				E61A9D2929FBCE1D004F50EB /* ggml-stablelm-tuned-alpha-7b-q4_0.bin */,
+				E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E65A04A929EA842800A95CA2 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				E68C754E29A076C7000A3BA5 /* PyTorchLoader.swift */,
+				E6533BB329592D2F000A80BA /* TokenizerGPT2.swift */,
+				E6533BB529592DA6000A80BA /* ModelGPT2.swift */,
+				E68C755029A07742000A3BA5 /* Model.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E624E1FD2958ECC800996CD1 /* Mia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E624E20D2958ECC900996CD1 /* Build configuration list for PBXNativeTarget "Mia" */;
+			buildPhases = (
+				E624E1FA2958ECC800996CD1 /* Sources */,
+				E624E1FB2958ECC800996CD1 /* Frameworks */,
+				E624E1FC2958ECC800996CD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mia;
+			packageProductDependencies = (
+				E61A9D2C29FC64BA004F50EB /* CLlama */,
+			);
+			productName = Mia;
+			productReference = E624E1FE2958ECC800996CD1 /* Mia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E624E1F62958ECC800996CD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					E624E1FD2958ECC800996CD1 = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
+					};
+				};
+			};
+			buildConfigurationList = E624E1F92958ECC800996CD1 /* Build configuration list for PBXProject "Mia" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E624E1F52958ECC800996CD1;
+			packageReferences = (
+			);
+			productRefGroup = E624E1FF2958ECC800996CD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E624E1FD2958ECC800996CD1 /* Mia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E624E1FC2958ECC800996CD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6024E7329E8E786001FE9B0 /* Main.storyboard in Resources */,
+				E624E2062958ECC900996CD1 /* Assets.xcassets in Resources */,
+				E61A9D2F29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E624E1FA2958ECC800996CD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */,
+				E624E271295904F600996CD1 /* StringExt.swift in Sources */,
+				E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */,
+				E624E2042958ECC800996CD1 /* ChatViewController.swift in Sources */,
+				E6EBE40D29598AE9006290A0 /* AnimatedButton.swift in Sources */,
+				E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */,
+				E624E2152958FF3C00996CD1 /* AI.swift in Sources */,
+				E6EBE40B29598808006290A0 /* AnimatedTextField.swift in Sources */,
+				E68C756129A60DF3000A3BA5 /* ArrayExt.swift in Sources */,
+				E6024E7729E8F6D6001FE9B0 /* SceneDelegate.swift in Sources */,
+				E6EBE40F295998A2006290A0 /* AnimatedTextView.swift in Sources */,
+				E624E2022958ECC800996CD1 /* AppDelegate.swift in Sources */,
+				E61A9D3029FC6633004F50EB /* Llama.swift in Sources */,
+				E68C755729A09C79000A3BA5 /* Math.swift in Sources */,
+				E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E624E20B2958ECC900996CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E624E20C2958ECC900996CD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E624E20E2958ECC900996CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mia/Mia.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = J65HT9E899;
+				ENABLE_HARDENED_RUNTIME = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LSUIElement = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdsp.Mia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		E624E20F2958ECC900996CD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Mia/Mia.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = J65HT9E899;
+				ENABLE_HARDENED_RUNTIME = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LSUIElement = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdsp.Mia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E624E1F92958ECC800996CD1 /* Build configuration list for PBXProject "Mia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E624E20B2958ECC900996CD1 /* Debug */,
+				E624E20C2958ECC900996CD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E624E20D2958ECC900996CD1 /* Build configuration list for PBXNativeTarget "Mia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E624E20E2958ECC900996CD1 /* Debug */,
+				E624E20F2958ECC900996CD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E61A9D2C29FC64BA004F50EB /* CLlama */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CLlama;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E624E1F62958ECC800996CD1 /* Project object */;
+}

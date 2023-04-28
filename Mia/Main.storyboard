@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ChatViewController" customModule="Mia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-ma-Uof" customClass="AnimatedTextView" customModule="Mia" customModuleProvider="target">
+                                <rect key="frame" x="5" y="53" width="404" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8g-LN-diw">
+                                <rect key="frame" x="5" y="807" width="404" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your prompt here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-Zd-lYl" customClass="AnimatedTextField" customModule="Mia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2d5-TM-Ey1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-k1-xzc">
+                                        <rect key="frame" x="340.5" y="0.0" width="63.5" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                        <connections>
+                                            <action selector="sendTouched:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ttx-ff-O9O"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="💤" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptg-ax-fuz" customClass="AnimatedTextField" customModule="Mia" customModuleProvider="target">
+                                <rect key="frame" x="193" y="48" width="28" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nYX-QC-Jrm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="SjZ-Lg-4ya"/>
+                            <constraint firstItem="J8g-LN-diw" firstAttribute="top" secondItem="Vd0-ma-Uof" secondAttribute="bottom" constant="5" id="ZRh-fM-vz0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vd0-ma-Uof" secondAttribute="trailing" constant="5" id="c2H-UZ-owG"/>
+                            <constraint firstItem="Ptg-ax-fuz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="cNK-5N-wp0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J8g-LN-diw" secondAttribute="trailing" constant="5" id="e8z-53-U2M"/>
+                            <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="Ptg-ax-fuz" secondAttribute="top" constant="5" id="mAS-hK-ZiD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J8g-LN-diw" secondAttribute="bottom" constant="5" id="o34-wg-rOA"/>
+                            <constraint firstItem="Vd0-ma-Uof" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="qO8-BH-fg8"/>
+                            <constraint firstItem="J8g-LN-diw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="toq-xg-g7u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gestureLabel" destination="Ptg-ax-fuz" id="727-Jb-QCn"/>
+                        <outlet property="inputText" destination="bzU-Zd-lYl" id="afZ-J5-Jrs"/>
+                        <outlet property="outputText" destination="Vd0-ma-Uof" id="LiX-T7-0J6"/>
+                        <outlet property="sendButton" destination="WnI-k1-xzc" id="6Xw-gh-yn5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
