@@ -1,90 +1,18 @@
 //
-//  Llama.swift
+//  LLaMa.swift
 //  Mia
 //
 //  Created by Byron Everson on 4/15/23.
 //
 
 import Foundation 
-import CLlama
+import CLLaMa
 
-private typealias _LlamaProgressCallback = (_ progress: Float, _ userData: UnsafeMutableRawPointer?) -> Void
+public class LLaMa: Model {
 
-public typealias LlamaProgressCallback = (_ progress: Float, _ llama: Llama) -> Void
-
-public struct LlamaContextParams {
-    public var context: Int32 = 512    // text context
-    public var parts: Int32 = -1   // -1 for default
-    public var seed: Int32 = 0      // RNG seed, 0 for random
-    public var numberOfThreads: Int32 = 8 //4
-
-    public var f16Kv = true         // use fp16 for KV cache
-    public var logitsAll = false    // the llama_eval() call computes all logits, not just the last one
-    public var vocabOnly = false    // only load the vocabulary, no weights
-    public var useMlock = false     // force system to keep model in RAM
-    public var embedding = false    // embedding mode only
-
-    public static let `default` = LlamaContextParams()
-
-    public init(context: Int32 = 2048 /*512*/, parts: Int32 = -1, seed: Int32 = 0, numberOfThreads: Int32 = 8 /*4*/, f16Kv: Bool = true, logitsAll: Bool = false, vocabOnly: Bool = false, useMlock: Bool = false, embedding: Bool = false) {
-        self.context = context
-        self.parts = parts
-        self.seed = seed
-        // Set numberOfThreads to processorCount, processorCount is actually thread count of cpu
-        self.numberOfThreads = Int32(ProcessInfo.processInfo.processorCount) // numberOFThread
-        self.f16Kv = f16Kv
-        self.logitsAll = logitsAll
-        self.vocabOnly = vocabOnly
-        self.useMlock = useMlock
-        self.embedding = embedding
-    }
-}
-
-public struct LlamaSampleParams {
-    public var topK: Int32
-    public var topP: Float
-    public var temperature: Float
-    public var repeatLastN: Int32
-    public var repeatPenalty: Float
-    public var batchSize: Int32
-
-    public static let `default` = LlamaSampleParams(
-        topK: 40,
-        topP: 0.95,
-        temperature: 0.8,
-        repeatLastN: 64,
-        repeatPenalty: 1.1,
-        batchSize: 8
-    )
-
-    public init(topK: Int32 = 30,
-                topP: Float = 0.95,
-                temperature: Float = 0.7,
-                repeatLastN: Int32 = 256,
-                repeatPenalty: Float = 1.25,
-                batchSize: Int32 = 8) {
-        self.topK = topK
-        self.topP = topP
-        self.temperature = temperature
-        self.repeatLastN = repeatLastN
-        self.repeatPenalty = repeatPenalty
-        // Set batchSize to processorCount, processorCount is actually thread count of cpu
-        self.batchSize = Int32(ProcessInfo.processInfo.processorCount) //batchSize
-    }
-}
-
-public enum LlamaError: Error {
-    case modelNotFound(String)
-    case inputTooLong
-    case failedToEval
-}
-
-public class Llama {
-    private let context: OpaquePointer?
-    private var contextParams: LlamaContextParams
-    private var sampleParams: LlamaSampleParams = .default
-
-    public init(path: String, contextParams: LlamaContextParams = .default) throws {
+    public override init(path: String, contextParams: ModelContextParams = .default) throws {
+        try super.init()
+        
         self.contextParams = contextParams
         var params = llama_context_default_params()
         params.n_ctx = contextParams.context
@@ -97,15 +25,15 @@ public class Llama {
         params.embedding = contextParams.embedding
         // Check if model file exists
         if !FileManager.default.fileExists(atPath: path) {
-            throw LlamaError.modelNotFound(path)
+            throw ModelError.modelNotFound(path)
         }
         // Load model at path
-        context = llama_init_from_file(path, params)
+        self.context = llama_init_from_file(path, params)
         // Print llama arch and cpu features info
         print(String(cString: llama_print_system_info()))
     }
 
-    public func predict(_ input: String, _ count: Int = 128, _ callback: ((String, Double) -> Bool) ) throws -> String {
+    public override func predict(_ input: String, _ count: Int = 128, _ callback: ((String, Double) -> Bool) ) throws -> String {
         // Sample parameters
         let params = sampleParams
         // Add a space in front of the first character to match OG llama tokenizer behavior
@@ -119,7 +47,7 @@ public class Llama {
         // How many tokens to generate - check if theres space in context for atleast one token (or batch size tokens?)
         var outputRemaining = min(count, Int(contextParams.context) - inputTokens.count)
         guard outputRemaining > 0 else {
-            throw LlamaError.inputTooLong
+            throw ModelError.inputTooLong
         }
         // Past count - how many tokens have been fed so far
         var nPast = Int32(0)
@@ -136,7 +64,7 @@ public class Llama {
             inputTokens.removeFirst(evalCount)
             // Eval batch
             if llama_eval(context, inputBatch, Int32(inputBatch.count), nPast, contextParams.numberOfThreads) != 0 {
-                throw LlamaError.failedToEval
+                throw ModelError.failedToEval
             }
             // Increment past count
             nPast += Int32(evalCount)
@@ -207,7 +135,7 @@ public class Llama {
             if outputRemaining > 0 {
                 // Send generated token back into model for next generation
                 if llama_eval(context, [outputToken], 1, nPast, contextParams.numberOfThreads) != 0 {
-                    throw LlamaError.failedToEval
+                    throw ModelError.failedToEval
                 }
                 // Increment past count
                 nPast += 1
@@ -231,7 +159,7 @@ public class Llama {
         }
 
         if llama_eval(context, inputs, Int32(inputs.count), Int32(0), contextParams.numberOfThreads) != 0 {
-            throw LlamaError.failedToEval
+            throw ModelError.failedToEval
         }
 
         let embeddingsCount = Int(llama_n_embd(context))

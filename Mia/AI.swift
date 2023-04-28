@@ -12,8 +12,7 @@ class AI {
     var aiQueue = DispatchQueue(label: "Mia-Main", qos: .userInitiated, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     
     //var model: Model!
-    var model: Llama!
-    //var model: GPTNeoX!
+    var model: Model!
     
     var flagExit = false
     private(set) var flagResponding = false
@@ -28,9 +27,9 @@ class AI {
         
         print("AI init")
         
-        // MARK: Llama
+        // MARK: LLaMa
         let modelPath = Bundle.main.path(forResource: "ggml-llama-7b-se-rl-peft-q4_0", ofType: "bin")!
-        model = try? Llama(path: modelPath)
+        model = try? LLaMa(path: modelPath)
         
         // MARK: GPTNeoX
         //let modelPath = Bundle.main.path(forResource: "ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0", ofType: "bin")!

@@ -18,7 +18,7 @@ class ChatViewController: UIViewController {
     @IBOutlet var outputText: AnimatedTextView!
     @IBOutlet var inputText: AnimatedTextField!
     @IBOutlet var sendButton: AnimatedButton!
-    @IBOutlet var gestureLabel: AnimatedTextField!
+    @IBOutlet var modelButton: AnimatedButton!
     
     // Chat font
     private var inAttributes: AttributeContainer!
@@ -58,13 +58,13 @@ class ChatViewController: UIViewController {
         
         // Default to loading model, disable send button until loaded
         sendButton.isEnabled = false
-        gestureLabel.text = "Loading model..."
+        modelButton.setTitle("Loading model...", for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // Load AI
         ai = AI()
-        gestureLabel.text = "🤖" //"💤"
+        modelButton.setTitle("🤖", for: .normal)
         sendButton.isEnabled = true
     }
 
@@ -95,7 +95,7 @@ class ChatViewController: UIViewController {
         //sendButton.isEnabled = false
         sendButton.setTitle("Cancel", for: .normal)
         generating = true
-        gestureLabel.text = "💭"
+        modelButton.setTitle("💭", for: .normal)
         // Input attributed string segment
         if inputText.text != " " {
             var inAttrString = AttributedString("\n\n" + inputText.text! + "\n\n")
@@ -112,12 +112,12 @@ class ChatViewController: UIViewController {
         let maxOutputLength = 2048
         ai.text(inputText.text!, maxOutputLength, { str, time in
             // Add next token, animated, show a different emoji if cancelling
-            self.gestureLabel.text = "💬" //🗯
+            self.modelButton.setTitle("💬", for: .normal) // 🗯
             self.outputText.typeOn(str, {
                 if self.generating {
-                    self.gestureLabel.text = "💭"
+                    self.modelButton.setTitle("💭", for: .normal)
                 } else {
-                    self.gestureLabel.text = "🤖" //"💤"
+                    self.modelButton.setTitle("🤖", for: .normal)
                 }
             })
             // Scroll output text to bottom
@@ -126,7 +126,7 @@ class ChatViewController: UIViewController {
             self.generating = false
             self.inputText.isHighlighted = true
             self.inputText.isEnabled = true
-            self.gestureLabel.text = "🤖" //"💤"
+            self.modelButton.setTitle("🤖", for: .normal)
             // Reset button - do not enable, button will enable once new text is entered
             self.sendButton.setTitle("Send", for: .normal)
             //self.sendButton.isEnabled = true

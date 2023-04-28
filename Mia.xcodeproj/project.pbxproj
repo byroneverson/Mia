@@ -10,14 +10,15 @@
 		E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */; };
 		E6024E7329E8E786001FE9B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6024E7229E8E786001FE9B0 /* Main.storyboard */; };
 		E6024E7729E8F6D6001FE9B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */; };
-		E61A9D2D29FC64BA004F50EB /* CLlama in Frameworks */ = {isa = PBXBuildFile; productRef = E61A9D2C29FC64BA004F50EB /* CLlama */; };
 		E61A9D2F29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin in Resources */ = {isa = PBXBuildFile; fileRef = E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */; };
-		E61A9D3029FC6633004F50EB /* Llama.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04A529EA83C500A95CA2 /* Llama.swift */; };
+		E61A9D3029FC6633004F50EB /* LLaMa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04A529EA83C500A95CA2 /* LLaMa.swift */; };
 		E624E2022958ECC800996CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2012958ECC800996CD1 /* AppDelegate.swift */; };
 		E624E2042958ECC800996CD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2032958ECC800996CD1 /* ChatViewController.swift */; };
 		E624E2062958ECC900996CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E624E2052958ECC900996CD1 /* Assets.xcassets */; };
 		E624E2152958FF3C00996CD1 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2142958FF3C00996CD1 /* AI.swift */; };
 		E624E271295904F600996CD1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E270295904F600996CD1 /* StringExt.swift */; };
+		E6515E2929FC724D00ABFC17 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6515E2829FC724D00ABFC17 /* Model.swift */; };
+		E6515E2B29FC785D00ABFC17 /* CLLaMa in Frameworks */ = {isa = PBXBuildFile; productRef = E6515E2A29FC785D00ABFC17 /* CLLaMa */; };
 		E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04AA29EA864600A95CA2 /* Utils.swift */; };
 		E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668788329B13FE3002BD5E7 /* Tasker.swift */; };
 		E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B0F152959B36300265845 /* UITextViewExt.swift */; };
@@ -47,9 +48,10 @@
 		E624E2102958F21E00996CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E624E2142958FF3C00996CD1 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
 		E624E270295904F600996CD1 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		E6515E2829FC724D00ABFC17 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E6533BB329592D2F000A80BA /* TokenizerGPT2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerGPT2.swift; sourceTree = "<group>"; };
 		E6533BB529592DA6000A80BA /* ModelGPT2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGPT2.swift; sourceTree = "<group>"; };
-		E65A04A529EA83C500A95CA2 /* Llama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llama.swift; sourceTree = "<group>"; };
+		E65A04A529EA83C500A95CA2 /* LLaMa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLaMa.swift; sourceTree = "<group>"; };
 		E65A04AA29EA864600A95CA2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E668788329B13FE3002BD5E7 /* Tasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasker.swift; sourceTree = "<group>"; };
 		E68B0F152959B36300265845 /* UITextViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExt.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61A9D2D29FC64BA004F50EB /* CLlama in Frameworks */,
+				E6515E2B29FC785D00ABFC17 /* CLLaMa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +126,8 @@
 				E624E2012958ECC800996CD1 /* AppDelegate.swift */,
 				E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */,
 				E624E2032958ECC800996CD1 /* ChatViewController.swift */,
-				E65A04A529EA83C500A95CA2 /* Llama.swift */,
+				E6515E2829FC724D00ABFC17 /* Model.swift */,
+				E65A04A529EA83C500A95CA2 /* LLaMa.swift */,
 				E6E0185029EFCA4200656843 /* GPTNeoX.swift */,
 				E624E2142958FF3C00996CD1 /* AI.swift */,
 				E668788329B13FE3002BD5E7 /* Tasker.swift */,
@@ -190,7 +193,7 @@
 			);
 			name = Mia;
 			packageProductDependencies = (
-				E61A9D2C29FC64BA004F50EB /* CLlama */,
+				E6515E2A29FC785D00ABFC17 /* CLLaMa */,
 			);
 			productName = Mia;
 			productReference = E624E1FE2958ECC800996CD1 /* Mia.app */;
@@ -257,12 +260,13 @@
 				E6EBE40D29598AE9006290A0 /* AnimatedButton.swift in Sources */,
 				E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */,
 				E624E2152958FF3C00996CD1 /* AI.swift in Sources */,
+				E6515E2929FC724D00ABFC17 /* Model.swift in Sources */,
 				E6EBE40B29598808006290A0 /* AnimatedTextField.swift in Sources */,
 				E68C756129A60DF3000A3BA5 /* ArrayExt.swift in Sources */,
 				E6024E7729E8F6D6001FE9B0 /* SceneDelegate.swift in Sources */,
 				E6EBE40F295998A2006290A0 /* AnimatedTextView.swift in Sources */,
 				E624E2022958ECC800996CD1 /* AppDelegate.swift in Sources */,
-				E61A9D3029FC6633004F50EB /* Llama.swift in Sources */,
+				E61A9D3029FC6633004F50EB /* LLaMa.swift in Sources */,
 				E68C755729A09C79000A3BA5 /* Math.swift in Sources */,
 				E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */,
 			);
@@ -500,9 +504,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E61A9D2C29FC64BA004F50EB /* CLlama */ = {
+		E6515E2A29FC785D00ABFC17 /* CLLaMa */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CLlama;
+			productName = CLLaMa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

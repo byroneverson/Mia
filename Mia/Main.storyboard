@@ -46,35 +46,43 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="💤" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptg-ax-fuz" customClass="AnimatedTextField" customModule="Mia" customModuleProvider="target">
-                                <rect key="frame" x="193" y="48" width="28" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koJ-c9-evG" customClass="AnimatedButton" customModule="Mia" customModuleProvider="target">
+                                <rect key="frame" x="192" y="58" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="nYX-QC-Jrm"/>
+                                    <constraint firstAttribute="height" constant="30" id="qjS-1o-yIh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koJ-c9-evG">
-                                <rect key="frame" x="373.5" y="58" width="20.5" height="22"/>
                                 <menu key="menu" id="yOE-8O-GrA">
                                     <children>
-                                        <command title="Item 1" id="VB8-EB-cjG"/>
-                                        <command title="Item 2" id="3CX-Pd-xZA"/>
+                                        <menu title="Models" id="h3w-g6-08u">
+                                            <menuOptions key="menuOptions" singleSelection="YES"/>
+                                            <children>
+                                                <command title="StackLLaMa 7B" menuElementState="on" id="VB8-EB-cjG"/>
+                                                <command title="OpenAssistant 7B" id="3CX-Pd-xZA"/>
+                                            </children>
+                                        </menu>
+                                        <menu title="Sampling" id="ds0-ym-KQD">
+                                            <children>
+                                                <command title="Top K" id="j1E-b3-BrP"/>
+                                                <command title="Top P" id="oyx-HM-SfV"/>
+                                                <command title="Temperature" id="rDL-1g-BvT"/>
+                                                <command title="Batch size" id="cNf-Uv-Wll"/>
+                                                <command title="Repeat last n" id="afU-EA-wdS"/>
+                                                <command title="Repeat penalty" id="ZEi-po-L0D"/>
+                                            </children>
+                                        </menu>
                                     </children>
                                 </menu>
-                                <state key="normal" image="gearshape.fill" catalog="system"/>
+                                <state key="normal" title="💤"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="koJ-c9-evG" secondAttribute="trailing" constant="20" id="8pg-kX-wIs"/>
+                            <constraint firstItem="koJ-c9-evG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Chu-RS-dO8"/>
                             <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="SjZ-Lg-4ya"/>
                             <constraint firstItem="J8g-LN-diw" firstAttribute="top" secondItem="Vd0-ma-Uof" secondAttribute="bottom" constant="5" id="ZRh-fM-vz0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vd0-ma-Uof" secondAttribute="trailing" constant="5" id="c2H-UZ-owG"/>
-                            <constraint firstItem="Ptg-ax-fuz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="cNK-5N-wp0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J8g-LN-diw" secondAttribute="trailing" constant="5" id="e8z-53-U2M"/>
-                            <constraint firstItem="Vd0-ma-Uof" firstAttribute="top" secondItem="Ptg-ax-fuz" secondAttribute="top" constant="5" id="mAS-hK-ZiD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J8g-LN-diw" secondAttribute="bottom" constant="5" id="o34-wg-rOA"/>
                             <constraint firstItem="koJ-c9-evG" firstAttribute="top" secondItem="Vd0-ma-Uof" secondAttribute="top" constant="5" id="o9S-Ab-fmW"/>
                             <constraint firstItem="Vd0-ma-Uof" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="qO8-BH-fg8"/>
@@ -82,8 +90,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gestureLabel" destination="Ptg-ax-fuz" id="727-Jb-QCn"/>
                         <outlet property="inputText" destination="bzU-Zd-lYl" id="afZ-J5-Jrs"/>
+                        <outlet property="modelButton" destination="koJ-c9-evG" id="cHD-uW-7O7"/>
                         <outlet property="outputText" destination="Vd0-ma-Uof" id="LiX-T7-0J6"/>
                         <outlet property="sendButton" destination="WnI-k1-xzc" id="6Xw-gh-yn5"/>
                     </connections>
@@ -94,7 +102,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
