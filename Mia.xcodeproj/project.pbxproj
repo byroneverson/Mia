@@ -10,7 +10,6 @@
 		E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E6D29E8E405001FE9B0 /* ComputeGraph.swift */; };
 		E6024E7329E8E786001FE9B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6024E7229E8E786001FE9B0 /* Main.storyboard */; };
 		E6024E7729E8F6D6001FE9B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6024E7629E8F6D6001FE9B0 /* SceneDelegate.swift */; };
-		E61A9D2F29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin in Resources */ = {isa = PBXBuildFile; fileRef = E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */; };
 		E61A9D3029FC6633004F50EB /* LLaMa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04A529EA83C500A95CA2 /* LLaMa.swift */; };
 		E624E2022958ECC800996CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2012958ECC800996CD1 /* AppDelegate.swift */; };
 		E624E2042958ECC800996CD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624E2032958ECC800996CD1 /* ChatViewController.swift */; };
@@ -21,9 +20,13 @@
 		E65A04AB29EA864600A95CA2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A04AA29EA864600A95CA2 /* Utils.swift */; };
 		E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668788329B13FE3002BD5E7 /* Tasker.swift */; };
 		E66EAFD329FC7D4100DBD2E9 /* CGPTNeoX in Frameworks */ = {isa = PBXBuildFile; productRef = E66EAFD229FC7D4100DBD2E9 /* CGPTNeoX */; };
+		E66EAFD529FC86F500DBD2E9 /* GPTNeoX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0185029EFCA4200656843 /* GPTNeoX.swift */; };
+		E684A83E2A04FAD900CDE42E /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin in Resources */ = {isa = PBXBuildFile; fileRef = E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */; };
+		E684A83F2A0A487700CDE42E /* ggml-llama-7b-se-rl-q4_0.bin in Resources */ = {isa = PBXBuildFile; fileRef = E6D771A92A0381D4009287A5 /* ggml-llama-7b-se-rl-q4_0.bin */; };
 		E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B0F152959B36300265845 /* UITextViewExt.swift */; };
 		E68C755729A09C79000A3BA5 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C755629A09C79000A3BA5 /* Math.swift */; };
 		E68C756129A60DF3000A3BA5 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C756029A60DF3000A3BA5 /* ArrayExt.swift */; };
+		E6D771A529FE3987009287A5 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D771A429FE3987009287A5 /* UIViewExt.swift */; };
 		E6EBE40B29598808006290A0 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40A29598808006290A0 /* AnimatedTextField.swift */; };
 		E6EBE40D29598AE9006290A0 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40C29598AE9006290A0 /* AnimatedButton.swift */; };
 		E6EBE40F295998A2006290A0 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBE40E295998A2006290A0 /* AnimatedTextView.swift */; };
@@ -36,7 +39,6 @@
 		E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/pythia/ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin"; sourceTree = "<group>"; };
 		E61A9D2229FB577C004F50EB /* ggml-stablelm-base-alpha-3b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-base-alpha-3b-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-base-alpha-3b-q4_0.bin"; sourceTree = "<group>"; };
 		E61A9D2929FBCE1D004F50EB /* ggml-stablelm-tuned-alpha-7b-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-tuned-alpha-7b-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-tuned-alpha-7b-q4_0.bin"; sourceTree = SOURCE_ROOT; };
-		E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-llama-7b-se-rl-peft-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/trl-lib/ggml-llama-7b-se-rl-peft-q4_0.bin"; sourceTree = SOURCE_ROOT; };
 		E61E38F329B1F0BA00114C15 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E61E38F529B1F12E00114C15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E624E1FE2958ECC800996CD1 /* Mia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 		E65A04A529EA83C500A95CA2 /* LLaMa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLaMa.swift; sourceTree = "<group>"; };
 		E65A04AA29EA864600A95CA2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E668788329B13FE3002BD5E7 /* Tasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasker.swift; sourceTree = "<group>"; };
+		E684A83C2A04E28900CDE42E /* ggml-GPT-NeoXT-Chat-Base-20B-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-GPT-NeoXT-Chat-Base-20B-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/chat-base/ggml-GPT-NeoXT-Chat-Base-20B-q4_0.bin"; sourceTree = SOURCE_ROOT; };
 		E68B0F152959B36300265845 /* UITextViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExt.swift; sourceTree = "<group>"; };
 		E68C754E29A076C7000A3BA5 /* PyTorchLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyTorchLoader.swift; sourceTree = "<group>"; };
 		E68C755029A07742000A3BA5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 		E68C756029A60DF3000A3BA5 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		E6D7093029FA682200F93D64 /* gptneox.swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = gptneox.swift; sourceTree = "<group>"; };
 		E6D7093129FA6DB000F93D64 /* ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin"; path = "../../gptneox.swift/vendor/gptneox.cpp/models/stablelm/ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin"; sourceTree = "<group>"; };
+		E6D771A429FE3987009287A5 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		E6D771A92A0381D4009287A5 /* ggml-llama-7b-se-rl-q4_0.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "ggml-llama-7b-se-rl-q4_0.bin"; path = "gptneox.swift/vendor/gptneox.cpp/models/trl-lib/ggml-llama-7b-se-rl-q4_0.bin"; sourceTree = SOURCE_ROOT; };
 		E6E0185029EFCA4200656843 /* GPTNeoX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTNeoX.swift; sourceTree = "<group>"; };
 		E6EBE40A29598808006290A0 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		E6EBE40C29598AE9006290A0 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 				E68C756029A60DF3000A3BA5 /* ArrayExt.swift */,
 				E68B0F152959B36300265845 /* UITextViewExt.swift */,
 				E624E270295904F600996CD1 /* StringExt.swift */,
+				E6D771A429FE3987009287A5 /* UIViewExt.swift */,
 				E624E2052958ECC900996CD1 /* Assets.xcassets */,
 				E6024E7229E8E786001FE9B0 /* Main.storyboard */,
 				E624E20A2958ECC900996CD1 /* Mia.entitlements */,
@@ -154,11 +160,12 @@
 		E6533BB729592F18000A80BA /* models */ = {
 			isa = PBXGroup;
 			children = (
+				E684A83C2A04E28900CDE42E /* ggml-GPT-NeoXT-Chat-Base-20B-q4_0.bin */,
 				E61A9D2029FA724A004F50EB /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin */,
 				E6D7093129FA6DB000F93D64 /* ggml-stablelm-7b-sft-v7-epoch-3-q4_0.bin */,
 				E61A9D2229FB577C004F50EB /* ggml-stablelm-base-alpha-3b-q4_0.bin */,
 				E61A9D2929FBCE1D004F50EB /* ggml-stablelm-tuned-alpha-7b-q4_0.bin */,
-				E61A9D2E29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin */,
+				E6D771A92A0381D4009287A5 /* ggml-llama-7b-se-rl-q4_0.bin */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -239,8 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6024E7329E8E786001FE9B0 /* Main.storyboard in Resources */,
+				E684A83F2A0A487700CDE42E /* ggml-llama-7b-se-rl-q4_0.bin in Resources */,
 				E624E2062958ECC900996CD1 /* Assets.xcassets in Resources */,
-				E61A9D2F29FC65EF004F50EB /* ggml-llama-7b-se-rl-peft-q4_0.bin in Resources */,
+				E684A83E2A04FAD900CDE42E /* ggml-oasst-sft-4-pythia-12b-epoch-3.5-q4_0.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D771A529FE3987009287A5 /* UIViewExt.swift in Sources */,
 				E68B0F162959B36300265845 /* UITextViewExt.swift in Sources */,
 				E624E271295904F600996CD1 /* StringExt.swift in Sources */,
 				E668788429B13FE3002BD5E7 /* Tasker.swift in Sources */,
@@ -267,6 +276,7 @@
 				E61A9D3029FC6633004F50EB /* LLaMa.swift in Sources */,
 				E68C755729A09C79000A3BA5 /* Math.swift in Sources */,
 				E6024E6E29E8E405001FE9B0 /* ComputeGraph.swift in Sources */,
+				E66EAFD529FC86F500DBD2E9 /* GPTNeoX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

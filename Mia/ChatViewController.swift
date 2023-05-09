@@ -19,6 +19,7 @@ class ChatViewController: UIViewController {
     @IBOutlet var inputText: AnimatedTextField!
     @IBOutlet var sendButton: AnimatedButton!
     @IBOutlet var modelButton: AnimatedButton!
+    @IBOutlet var modelMenu: UIMenu!
     
     // Chat font
     private var inAttributes: AttributeContainer!
@@ -146,6 +147,30 @@ class ChatViewController: UIViewController {
         } else if (!ai.flagResponding) {
             sendButton.isEnabled = true
         }
+    }
+    
+    func loadModel(_ aiModel: AIModel) {
+        // Disable input
+        sendButton.isEnabled = false
+        modelButton.setTitle("Loading model...", for: .normal)
+        // Load model
+        ai.loadModel(aiModel)
+        // Enable input
+        modelButton.setTitle("🤖", for: .normal)
+        sendButton.isEnabled = true
+    }
+    
+    
+    // MARK: Menu actions
+    
+    @IBAction func menuAction_model_StackLLaMA(_ sender: Any) {
+        print("menuAction_model_StackLLaMA")
+        loadModel(.StackLLama)
+    }
+    
+    @IBAction func menuAction_model_OpenAssistant(_ sender: Any) {
+        print("menuAction_model_OpenAssistant")
+        loadModel(.OpenAssistant)
     }
 
     

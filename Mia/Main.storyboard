@@ -56,8 +56,31 @@
                                         <menu title="Models" id="h3w-g6-08u">
                                             <menuOptions key="menuOptions" singleSelection="YES"/>
                                             <children>
-                                                <command title="StackLLaMa 7B" menuElementState="on" id="VB8-EB-cjG"/>
-                                                <command title="OpenAssistant 7B" id="3CX-Pd-xZA"/>
+                                                <command title="OpenAssistant Pythia 12B" menuElementState="on" id="3CX-Pd-xZA">
+                                                    <connections>
+                                                        <action selector="menuAction_model_OpenAssistant:" destination="Y6W-OH-hqX" id="GOR-87-zar"/>
+                                                    </connections>
+                                                </command>
+                                                <command title="OpenAssistant StableLM 7B" id="3Fm-R0-U6i">
+                                                    <connections>
+                                                        <action selector="menuAction_model_OpenAssistant:" destination="Y6W-OH-hqX" id="Bni-t0-KXi"/>
+                                                    </connections>
+                                                </command>
+                                                <command title="StableLM Tuned Alpha 7B" id="73d-dF-eeu">
+                                                    <connections>
+                                                        <action selector="menuAction_model_OpenAssistant:" destination="Y6W-OH-hqX" id="UVi-x9-zLr"/>
+                                                    </connections>
+                                                </command>
+                                                <command title="StableLM Base Alpha 3B" id="XH2-48-5ow">
+                                                    <connections>
+                                                        <action selector="menuAction_model_OpenAssistant:" destination="Y6W-OH-hqX" id="vBm-9s-ikE"/>
+                                                    </connections>
+                                                </command>
+                                                <command title="StackLLaMa 7B" id="VB8-EB-cjG">
+                                                    <connections>
+                                                        <action selector="menuAction_model_StackLLaMA:" destination="Y6W-OH-hqX" id="joj-ml-mNH"/>
+                                                    </connections>
+                                                </command>
                                             </children>
                                         </menu>
                                         <menu title="Sampling" id="ds0-ym-KQD">
